@@ -14,44 +14,50 @@
 </nav>
 
 <!-- 에러메시지 띄우기 -->
-<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
-
+<body>
+        
+<div class ="login_alert" id="wrapper" >
 <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+</div>
+<h2>
+    
+</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
+  <div class="form-group" id="wrapper">
     <%= f.label :email, class: "col-xs-12 col-sm-6 col-md-7 control-label" %>
-    <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="col-xs-12 col-sm-6 col-md-12" id="wrapper">
         <%= f.email_field :email, autofocus: true , class: "form-control", placeholder: "Email address" %>
     </div>
 </div>
 
-<div class="form-group" >
+<div class="form-group" id="wrapper" >
     <%= f.label :password, class: "col-xs-12 col-sm-6 col-md-8" %>
-    <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="col-xs-12 col-sm-6 col-md-6" id="wrapper">
         <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
     </div>
 </div>
 
 <% if devise_mapping.rememberable? -%>
-<div class="form-group">
-    <div class="col-xs-12 col-sm-6 col-md-8">
+<div class="form-group" id="wrapper">
+    <div class="col-xs-12 col-sm-6 col-md-8" id="wrapper">
         <%= f.check_box :remember_me %> <%= f.label :remember_me %>
     </div>
 </div>
 <% end -%>
 
-<div class="form-group">
-    <div class="col-xs-12 col-sm-6 col-md-8">
+<div class="form-group" id="wrapper">
+    <div class="col-xs-12 col-sm-6 col-md-8" id="wrapper">
         <%= f.submit "Sign in", class: 'btn btn-primary' %>
     </div>
 </div>
 
-<div class="form-group">
-    <div class="col-xs-12 col-sm-6 col-md-8">
+<div class="form-group" id="wrapper">
+    <div class="col-xs-12 col-sm-6 col-md-8" id="wrapper">
         <%= render "users/shared/links" %>
     </div>
 </div>
+</body>
 
 <% end %>
 

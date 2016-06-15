@@ -75,7 +75,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><p class="navbar-text">Welcome!</p></li>
         <li class="dropdown">
-          <a href="/users/sign_in" class="dropdown-toggle" data-toggle="dropdown"><b><%=current_user.email%></b> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><%=current_user.email%></b> <span class="caret"></span></a>
 			<ul id="login-dp" class="dropdown-menu">
 				<li>
 					 <div class="row">
@@ -85,8 +85,7 @@
 									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
 									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
 								</div>
-                                or
-                                <%= form_for(:user, :url => session_path(:user)) do |f| %>        
+                                or     
 								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
@@ -106,7 +105,6 @@
 											 </label>
 										</div>
 								 </form>
-                                 <% end %>    
 							</div>
 							<div class="bottom text-center">
 								New here ? <a href="/users/sign_up"><b>Join Us</b></a>  <!-- 회원가입 버튼 눌렀을 때 -->
@@ -193,7 +191,7 @@
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({
-        interval: 5000 //changes the speed
+        interval: 3000 //changes the speed
     })
     </script>
 </div>

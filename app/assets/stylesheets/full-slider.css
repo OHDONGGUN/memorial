@@ -85,3 +85,16 @@ footer {
         border-top:0 none;
     }
 }
+
+.login_alert{
+    font-size:150%;
+    color: #FF0000;
+}
+#wrapper
+{
+    width: 500px;
+    
+    margin: 0 auto;  
+   
+    
+}

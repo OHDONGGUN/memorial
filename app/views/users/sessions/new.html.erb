@@ -1,0 +1,57 @@
+<nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Memorial</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 에러메시지 띄우기 -->
+<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+
+<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.label :email, class: "col-xs-12 col-sm-6 col-md-7 control-label" %>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+        <%= f.email_field :email, autofocus: true , class: "form-control", placeholder: "Email address" %>
+    </div>
+</div>
+
+<div class="form-group" >
+    <%= f.label :password, class: "col-xs-12 col-sm-6 col-md-8" %>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+    </div>
+</div>
+
+<% if devise_mapping.rememberable? -%>
+<div class="form-group">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+        <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+    </div>
+</div>
+<% end -%>
+
+<div class="form-group">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+        <%= f.submit "Sign in", class: 'btn btn-primary' %>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+        <%= render "users/shared/links" %>
+    </div>
+</div>
+
+<% end %>
+

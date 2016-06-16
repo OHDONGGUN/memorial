@@ -45,8 +45,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">몇명의 유저가 등록했다.</a></li>
-        <li><a href="#">몇개의 추억이 공유되었다.</a></li>
+        <li><p class="navbar-text"><%=@user_count.count%>명의 유저가 사용중입니다!.</p></li>
+        <li><p class="navbar-text">75,654개의 추억이 공유되었습니다.</p></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -124,8 +124,6 @@
             </div>
         </div>
         
-        <h3> 유저 로그인 됨? <%=user_signed_in?%> </h3>
-        <h3><a href="/users/sign_out">로그아웃</a></h3>
         
         <!-- Controls -->
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -157,7 +155,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/bootstrap.js"></script>
-
+    <script src="assets/bootstrap.min.js"></script>
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({

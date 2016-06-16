@@ -5,12 +5,13 @@ class HomeController < ApplicationController
       redirect_to "/home/main"  # 메인으로 가도록..
     end
   
+    @user_count = User.all  # 몇명의 사용자가 이용중입니다.. 보여주기 위해 
   end
   
   def main
     unless user_signed_in?  #유저가 로그인도 안했는데 메인에 접근하려 한다면.. 
       redirect_to "/home/index"  # 인덱스로 넘어가 로그인을 하도록..
     end
+    @user_count = User.all  # 몇명의 사용자가 이용중입니다.. 보여주기 위해
   end
-  
 end

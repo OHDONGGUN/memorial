@@ -1,42 +1,47 @@
-<h2>로그인화면 입니다.</h2>
+<h2 id="wrapper">회원가입화면 입니다.</h2><h1></h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   
-  <div>이름<br />
-        <%= f.text_field :name, autofocus: true %></div>
+  <div id="wrapper">이름<br />
+        <%= f.text_field :name, autofocus: true , class: "form-control", placeholder: "Email address"%></div>
 
-    <div><%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "여자" %> </div>
-    <div><%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "남자" %> </div>
+    <div id="wrapper"><%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "여자" %> </div>
+    <div id="wrapper"><%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "남자" %> </div>
   <h2>
 
   </h2>
-    <div>생년월일<br />
+    <div id="wrapper">생년월일<br />
         <%= f.date_select  :date_of_birth, :start_year=>1900 %></div>
   <h2>
 
   </h2>
-  <div class="field">
+  <div class="field"  id="wrapper">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address" %>
   </div>
 
-  <div class="field">
+  <div class="field" id="wrapper">
    비밀번호
     <% if @minimum_password_length %>
     <em>(최소 <%= @minimum_password_length %>자리 이상 )</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Email address" %>
   </div>
 
-  <div class="field">
+  <div class="field" id="wrapper">
    비밀번호 확인<br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Email address" %>
   </div>
   
-  <div class="actions">
+  <div class="actions" id="wrapper">
     <%= f.submit "완료" %>
   </div>
 <% end %>
-<p>취소? <%= button_to "취소", registration_path(resource_name), data: { confirm: "진짜 지울래?" }, method: :delete %></p>
-<%= render "devise/shared/links" %>
+<div id="wrapper"><%= button_to "취소", registration_path(resource_name), data: { confirm: "진짜 지울래?" }, method: :delete %></div>
+<div id="wrapper"><%= render "devise/shared/links" %></div>
+
+
+
+
+

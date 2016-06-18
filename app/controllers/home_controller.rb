@@ -3,6 +3,8 @@ class HomeController < ApplicationController
   def index #로그인 페이지
     if user_signed_in?  # 로그인 성공하면
       redirect_to "/home/main"  # 메인으로 가도록..
+      @image_file= "bg.jpg"
+      
     end
   
     @user_count = User.all  # 몇명의 사용자가 이용중입니다.. 보여주기 위해 

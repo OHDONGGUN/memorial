@@ -93,54 +93,58 @@
 
 
 </body>
-    <!-- Full Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
 
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 1</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>
-            </div>
-        </div>
-        
-       
-       
-        
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
+<!-- 지도와 관련된 것을 시작한다.##############################################################-->
+   <head>
+    <title>Place searches</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+    <script>
 
-    </header>
+function initMap() {
+  var mapOptions = {
+    //mapTypeId: google.maps.MapTypeId.HYBRID, // 맵 형식.. 위성/도로 등등
+    zoom: 4,
+    center: {lat: -33, lng: 151},
+    disableDefaultUI: true,
+    zoomControl: true,    // 지도 줌 메뉴.
+    zoomControlOptions: {    // 위치는 어디로 할껀데??
+        position: google.maps.ControlPosition.LEFT_TOP,
+        style:google.maps.ZoomControlStyle.DEFAULT // 왜 작동 안하냐..
+    },
+    //mapTypeControl: boolean,    // mapTypeControl은 사용자가 지도 유형 간에(지도나 위성 등) 전환할 수 있는 지도 유형 컨트롤을 활성화/비활성화합니다. 
+    //scaleControl: boolean,    // scaleControl은 간단한 지도 배율을 제공하는 배율 컨트롤을 활성화/비활성화합니다.
+    //streetViewControl: boolean,    // streetViewControl은 사용자가 스트리트 뷰 파노라마를 활성화할 수 있는 펙맨 컨트롤을 활성화/비활성화합니다.
+    //rotateControl: boolea,    // rotateControl은 45° 이미지의 방향을 제어하는 회전 컨트롤의 표시를 활성화/비활성화합니다. 
+    scrollwheel:  false,  // 스크롤 줌을 disable한다.
+    title: 'Click to zoom' //더블 클릭시 줌인
+  }
+  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  
+}
 
-    <!-- Page Content -->
+
+    </script>
+  </head>
+  <body>
+   <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKVoxez1exK9hIUjPShVFhlkru8sxWN1c&signed_in=true&libraries=places&callback=initMap&region=KR" async defer></script>
+      
+  </body>
+    
+<!-- 지도와 관련된 것을 끝낸다.##############################################################-->
+    
+    <!-- Page Content, 이거는 저작권 그런거 쓰는 footer.. -->
     <div class="container">
         <!-- Footer -->
         <footer>
@@ -151,7 +155,6 @@
             </div>
             <!-- /.row -->
         </footer>
-
     </div>
     <!-- /.container -->
 
